@@ -1,0 +1,49 @@
+<!doctype html>  
+<html>  
+<head>  
+    <title>Page title</title>  
+</head>  
+<body>  
+       <nav>  
+    <ul>  
+        <li><a href="/blogs">Blog</a></li>    
+        <li><a href="#">Archives</a></li>  
+        <li><a href="#">Contact</a></li>  
+        <li class="subscribe"><a href="#">Subscribe via. RSS</a></li>  
+    </ul>  
+</nav> 
+<section id = "intro">
+   <div class="hero-unit-blog" height :10px >
+    <h1>Welcome to the Blog</h1>
+    <p>Try a different recipe today!</p>
+      </div>
+      </section>
+
+<% @blogs.each do |blog| %>
+    <ul class="thumbnails">
+    <li class="span7">
+    <div class="thumbnail">
+    	<section id = "mainContent">
+    		<h3><%= blog.title %></h3>
+    <img src="<%= blog.blog_image %>" align = "center" width = "400" height = "400" >
+    
+<!--     <%= blog.blog_image %> -->
+    
+    <p><%= blog.content %></p>
+   
+   <tr>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    
+  </tr>
+    </div>
+    </li>
+    </ul>
+  
+<% end %>
+</table>
+</section>
+
+<%= link_to 'New Blog', new_blog_path %>
+</body>  
+</html>

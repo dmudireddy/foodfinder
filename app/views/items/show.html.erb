@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item name:</b>
+  <%= @item.item_name %>
+</p>
+
+<p>
+  <b>Store name:</b>
+  <%= @item.store_name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @item.image %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @item.location_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

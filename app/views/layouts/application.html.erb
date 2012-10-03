@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodFinder</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+<!-- 	<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+</div> -->
+	
+	<div class ="navbar navbar-fixed-top">
+		<div class= "navbar-inner">
+				<div class ="container">
+				<ul class = "nav nav-pills">
+					<li class ="brand"> FoodFinder</li>
+					<li class ="active">
+					 <li> <%= link_to "Home",home_index_path %></li> 
+					<li>  <%= link_to "Explore",locations_path%></li>	
+					<li> <%= link_to "Blog",blogs_path%></li>
+					</ul>
+					 <!-- The drop down menu -->
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+   <li> Signed in as <%= current_user.email %></li>
+     <li class="divider-vertical"></li>
+   <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
+  <% else %>
+  <li>  <%= link_to "Sign up", new_user_registration_path %> </li>
+         <li class="divider-vertical"></li>
+   <li>  <%= link_to "Sign in", new_user_session_path %> </li>
+  <% end %>      
+        </ul>	 
+			    </div>
+		</div>
+	</div>
+
+<%= yield %>
+<%= yield :scripts%>
+
+</body>
+</html>

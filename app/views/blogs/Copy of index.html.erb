@@ -1,0 +1,31 @@
+
+   <div class="hero-unit-blog" height :10px>
+    <h1>Welcome to our Blog</h1>
+    <p>Try a different recipe today!</p>
+    
+    </div>
+
+<% @blogs.each do |blog| %>
+    <ul class="thumbnails1">
+    <li class="span3">
+    <div class="thumbnail1">
+    <img src="methiroti.jpg" >
+<!--     <%= blog.blog_image %> -->
+    <h5><%= blog.title %></h5>
+    <p><%= blog.content %></p>
+   
+   <tr>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+    </div>
+    </li>
+    </ul>
+  
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog', new_blog_path %>

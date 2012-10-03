@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+   <ul class="thumbnails">
+    <li class="span7">
+    <div class="thumbnail">
+    	<section id = "mainContent">
+    		<h3><%= @blog.title %></h3>
+    <img src="<%= @blog.blog_image %>" align = "center" width = "400" height = "400" >
+    
+    <p><%= @blog.content %></p>
+    
+   
+   <h2>Comments</h2>
+
+<% @blog.comments.each do |c| %>
+  <p>
+    <b><%= c.name %> said:</b><br />
+    <%= time_ago_in_words(c.created_at) %> ago
+  </p>
+
+  <p>
+    <%= c.content %>
+  </p>
+<% end %>
+  <h2>Add a Comment</h2>
+
+<% form_for [@blog, Comment.new] do |f| %>
+  <p>
+
+    <%= f.label :name, "Author" %><br />
+    <%= f.text_field :name %><br />
+    <%= f.label :content, "Comment Description" %><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit "Add Comment" %>
+  </p>
+<% end %>
+    </div>
+    </li>
+    </ul>
+
+
+

@@ -1,0 +1,72 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.hero-unit-blog {
+ margin-top:1cm;
+  margin-bottom: 20px;
+  background-color: #99CCFF;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+   
+ #mainContent {  
+            display: table-cell;  
+            width: 800px;  
+            padding-right: 22px;  
+        }
+.thumbnail2 {
+  display: block;
+  width:800px;
+  padding: 4px;
+  line-height: 1;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+a.thumbnail2:hover {
+  border-color: #0088cc;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+     -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+          box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
+.thumbnail2 > img {
+  display: block;
+  // max-width: 100%;
+  // margin-right: auto;
+  // margin-left: auto;
+}
+
+.thumbnail2 .caption {
+  padding: 9px;
+}
+.thumbnails2 {
+  margin-left: -20px;
+  list-style: none;
+  *zoom: 1;
+}
+
+.thumbnails2:before,
+.thumbnails2:after {
+  display: table;
+  content: "";
+}
+
+.thumbnails2:after {
+  clear: both;
+}
+
+.row-fluid .thumbnails2 {
+  margin-left: 0;
+}
+
+.thumbnails2 > li {
+  float: left;
+  margin-bottom: 18px;
+  margin-left: 20px;
+}

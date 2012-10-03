@@ -1,0 +1,52 @@
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+<!--   <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div> -->
+  <%= fields_for(@item) do |i| %>
+   <div class="field">
+    <%= i.label :item_name %><br />
+    <%= i.text_field :item_name %>
+  </div>
+   <div class="field">
+    <%= i.label :store_name %><br />
+    <%= i.text_field :store_name %>
+  </div>
+ 
+  <div class="field">
+    <%= i.label :image %><br />
+    <%= i.file_field :image %>
+  </div>
+  <% end%>
+  <div class="field">
+    <%= f.label :gmaps %><br />
+    <%= f.check_box :gmaps %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

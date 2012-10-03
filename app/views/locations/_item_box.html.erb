@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<% @locations.each do |location|%>
+<div class="container1">  
+	<% location.items.each do |i|%>
+<ul class="thumbnails1">  
+        <li class="spanreview">  
+          <div class="thumbnail">  
+            <img src="<%= i.image %>" alt="product 1" align="right" width="200" height="150">  
+            <div class="caption">  
+              <h5>  <%= i.item_name %></h5>
+              <h5>@ <%= i.store_name %> - <%= location.city %> , <%= location.state %></h5>           
+            <tr> <td>Last spotted by Username over created_at ago from iPhone </td>    </br>    	
+    <td><%= link_to 'Show', location %></td>
+    <td><%= link_to 'Edit', edit_location_path(location) %></td>     
+  </tr> </div>  </div>   </li> </ul>    </div> <!-- /container -->	
+  <%end%>
+<% end %>          
+
+</body>
+</html>

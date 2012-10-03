@@ -1,0 +1,16 @@
+
+
+
+
+    <div class="hero-unit">
+    <h1>Welcome to FoodFinder !</h1>
+    <p>Find your favourtie dishes anywhere!</p>
+    <p>
+    <a class="btn btn-primary btn-large" href="/locations">
+    Learn more
+    </a>
+    </p>
+    </div>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>

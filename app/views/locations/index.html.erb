@@ -1,0 +1,13 @@
+<h3>Find Restaurants near you</h3>
+<%= form_tag locations_path ,:method => :get do %>
+	<%=text_field_tag :search,params[:search],:placeholder => 'Address,City or State'%>
+	<%=submit_tag "Search", :name => nil%>
+
+<% end %>
+
+<%= gmaps4rails(@json)%>
+</br>
+<%= render :partial => 'item_box' %> 
+
+
+<%= link_to 'New Location', new_location_path %>
